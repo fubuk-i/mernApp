@@ -75,3 +75,15 @@ exports.getCollectionWithCriteriaAndProjections = function (collectionName, crit
     })
   })
 }
+
+exports.findAggregate = function (collectionName, aggregateArray) {
+
+  return new Promise(function (resolve, reject) {
+    var coll = model.getModel(collectionName);
+    coll.aggregate(aggregateArray).exec((err, aggVal) => {
+      if (err) reject(err);
+      resolve(aggVal)
+    });
+
+  })
+}
