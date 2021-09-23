@@ -25,7 +25,7 @@ router.get('/getAllCourses', async (req, res, next) => {
     try {
         var options = { skip: '', limit: '' };
         if (page && page != 'null' && page != '') {
-            var recordsPerPage = 10;
+            var recordsPerPage = 100;
             if (doc.recordsPerPage && doc.recordsPerPage != 'null' && doc.recordsPerPage != '')
                 {
                 recordsPerPage = parseInt(doc.recordsPerPage);
@@ -48,7 +48,7 @@ router.get('/getCourseByCat', async (req, res, next) => {
     try {
         var options = { skip: '', limit: '' };
         if (page && page != 'null' && page != '') {
-            var recordsPerPage = 10;
+            var recordsPerPage = 100;
             if (doc.recordsPerPage && doc.recordsPerPage != 'null' && doc.recordsPerPage != '')
                 {
                 recordsPerPage = parseInt(doc.recordsPerPage);

@@ -5,6 +5,7 @@ const routes = require('./api/routes');
 //var db = require('./api/daos/index');
 var expressWinston = require('express-winston');
 var winston = require('winston');
+var path = require('path');
 
 //Port on which server will run
 const port = 4000;
@@ -15,6 +16,7 @@ var app = express();
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', routes);
 //server started
